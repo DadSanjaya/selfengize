@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.powerwalking.powerwalking.VirtualWalkingAboutActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textSize="20dp"
+            android:textColor="#000"
+            android:textAlignment="center"
+            android:padding="10dp"
+            android:text="A game that developed mainly for increase human body healthiness and avoid the diseases such as diabetes , heart failures,Increasing cholesterol level. Now a days most young people suffering from these diseases. It will be a huge
+problem near future.This will create a new community like social media. This is mainly developed for the motivate the society to maintain more healthier lifestyle and make it popular."/>
+
+
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>

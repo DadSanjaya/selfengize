@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.powerwalking.powerwalking.StaticsActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerVertical="true"
+            android:padding="15dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="10">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Statics"
+                    android:textAlignment="center"
+                    android:textColor="#fff"
+                    android:padding="10dp"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:background="@color/colorAccent"/>
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:layout_margin="20dp">
+
+                <ImageView
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:background="@drawable/bar_chart"
+                    android:layout_centerHorizontal="true"/>
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/activity_statics_button_my_statics"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorPrimary"
+                android:text="My Statics"
+                android:textColor="#fff"
+                android:textSize="20dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"/>
+
+            <Button
+                android:id="@+id/activity_statics_button_world_statics"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorPrimary"
+                android:text="World Statics"
+                android:textColor="#fff"
+                android:textSize="20dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorPrimary"
+                android:text="Back to menu"
+                android:textColor="#fff"
+                android:layout_marginTop="30dp"
+                android:textSize="20dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
