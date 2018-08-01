@@ -1,8 +1,10 @@
 package com.powerwalking.powerwalking;
 
 import android.content.Intent;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -32,6 +34,7 @@ public class goalWeightActivity extends AppCompatActivity {
     private int lb;
     private Double lose;
     private Double y;
+    public static Integer weightLoss;
 
 
     Button button_schedule;
@@ -45,16 +48,15 @@ public class goalWeightActivity extends AppCompatActivity {
         lossweight = (EditText) findViewById(R.id.weight);
         resultView = (TextView) findViewById(R.id.result);
 
-
         findViewById(R.id.layout_login_button_login).setOnClickListener(new View.OnClickListener() {
 
             // Logic for validation, input can't be empty
             @Override
             public void onClick(View v) {
 
-
                 String str2 = lossweight.getText().toString();
 
+                Log.i("test", "str2 : "+ str2 );
 
                 if (TextUtils.isEmpty(str2)) {
                     lossweight.setError("Please enter how much you want to lose or gain using lose for (-) and gain for (+)");
@@ -62,23 +64,29 @@ public class goalWeightActivity extends AppCompatActivity {
                     return;
                 }
 
+                weightLoss = Integer.valueOf(str2);
+
+
                 //       else{  Intent i = new Intent(goalWeightActivity.this, LongTermScheduleActivity.class);
                 //      startActivity(i);}
 
 //Get the user values from the widget reference
 
                 float lossweight1 = Float.parseFloat(str2);
+                Log.i("test", "lossweight1 : "+ String.valueOf(lossweight1));
 
 //Calculate BMI value
                 float bmiValue = calculateBMI(weight, height);
+                Log.i("test", "bmiValue : "+ String.valueOf(bmiValue));
 
 
 
 
 
 //daily maintains
-
-                   Double dailyMaintains=determineBMR(weight,height,age)*countSteps(steps);
+                Log.i("test", "age : "+ String.valueOf(LoginActivity.age));
+                Double dailyMaintains = determineBMR(weight,height,LoginActivity.age)*countSteps(steps);
+                Log.i("test", "dailyMaintains : "+ String.valueOf(dailyMaintains));
 
 //  1lb of fat is 3500 calories and loss calorie
 
@@ -116,7 +124,12 @@ public class goalWeightActivity extends AppCompatActivity {
 
                 resultView.setText(String.valueOf(bmiValue + "-" + bmiInterpretation ));
 
+//                Intent myIntent = new Intent(goalWeightActivity.this, LongTermScheduleActivity.class);
+//            myIntent.putExtra("key", "test");
+                startActivity(new Intent(goalWeightActivity.this, LongTermScheduleActivity.class));
+//                goalWeightActivity.this.startActivity(myIntent);
             }
+
         });
 
     }
@@ -133,7 +146,7 @@ public class goalWeightActivity extends AppCompatActivity {
 
 
     //calculate BMR value
-    public float determineBMR(float weight,float height,Integer age){
+    public double determineBMR(float weight,float height,Integer age){
 /*            if(gender==male)
 
     {
@@ -142,9 +155,8 @@ public class goalWeightActivity extends AppCompatActivity {
     }
      else*/
 
-    {
         return (float )(665 + (4.35 * weight) + (4.7 * height) - (4.7 * age));
-    }
+
 
 }
 

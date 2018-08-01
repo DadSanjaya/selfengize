@@ -19,6 +19,7 @@ public class LoginActivity extends Activity {
     private EditText editText_height;
     private Spinner spinner_gender;
     private Button button_login;
+    public static Integer age;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +48,8 @@ public class LoginActivity extends Activity {
 
     private boolean validateData(){
         String name = editText_name.getText().toString();
-        String age = editText_age.getText().toString();
+        String ageTemp = editText_age.getText().toString();
+
         String height = editText_height.getText().toString();
         int genderId = spinner_gender.getSelectedItemPosition();
         if(name == null || name.isEmpty() || name.trim().isEmpty()){
@@ -55,10 +57,12 @@ public class LoginActivity extends Activity {
             return false;
         }
 
-        if(age == null || age.isEmpty() || age.trim().isEmpty()){
+        if(ageTemp == null || ageTemp.isEmpty() || ageTemp.trim().isEmpty()){
             showSnackbar("Please enter a valid age");
             return false;
         }
+
+        age = Integer.valueOf(ageTemp);
 
         if(height == null || height.isEmpty() || height.trim().isEmpty()){
             showSnackbar("Please enter a valid height");

@@ -77,6 +77,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="5"
                             android:inputType="numberDecimal"
+                            android:text="70"
                             android:textColor="#000"
                             android:textSize="20dp" />
 
@@ -102,14 +103,14 @@
                         android:id="@+id/layout_login_button_login"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Start long term schedule"
-                        android:backgroundTint="@color/colorPrimaryDark"
                         android:layout_centerHorizontal="true"
-                        android:textColor="#fff"
+                        android:backgroundTint="@color/colorPrimaryDark"
+                        android:paddingBottom="20dp"
                         android:paddingLeft="50dp"
                         android:paddingRight="50dp"
                         android:paddingTop="20dp"
-                        android:paddingBottom="20dp"/>
+                        android:text="Start long term schedule"
+                        android:textColor="#fff" />
 
                 </RelativeLayout>
 

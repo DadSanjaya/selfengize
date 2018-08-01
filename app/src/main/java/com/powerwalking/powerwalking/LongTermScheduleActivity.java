@@ -3,6 +3,7 @@ package com.powerwalking.powerwalking;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class LongTermScheduleActivity extends AppCompatActivity {
     TextView a;
@@ -14,7 +15,7 @@ public class LongTermScheduleActivity extends AppCompatActivity {
 
          a=(TextView) findViewById(R.id.lol);
 
-
+        Toast.makeText(getApplicationContext(), "Loss Weight is : " + String.valueOf(goalWeightActivity.weightLoss), Toast.LENGTH_SHORT).show();
 
     }
 
